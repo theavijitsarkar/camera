@@ -26,7 +26,8 @@ Template.viewfinder.rendered = function() {
       video.mozSrcObject = stream;
     } else {
       var vendorURL = window.URL || window.webkitURL;
-      video.src = vendorURL.createObjectURL(stream);
+      //video.src = vendorURL.createObjectURL(stream);
+      video.srcObject = tream
     }
     video.play();
 
@@ -181,6 +182,6 @@ MeteorCamera.getPicture = function (options, callback) {
     callback.apply(null, originalArgs);
   };
   
-  view = UI.renderWithData(Template.camera);
-  UI.insert(view, document.body);
+  
+  view = Blaze.render(Template.camera, document.body);
 };
