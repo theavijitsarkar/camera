@@ -176,6 +176,7 @@ MeteorCamera.getPicture = function (options, callback) {
   var view;
   
   closeAndCallback = function () {
+    app.popup.close($('.camera-popup'),true)  
     var originalArgs = arguments;
     UI.remove(view);
     photo.set(null);
