@@ -27,7 +27,7 @@ Template.viewfinder.rendered = function() {
     } else {
       var vendorURL = window.URL || window.webkitURL;
       //video.src = vendorURL.createObjectURL(stream);
-      video.srcObject = tream
+      video.srcObject = stream
     }
     video.play();
 
