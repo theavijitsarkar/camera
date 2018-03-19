@@ -184,4 +184,5 @@ MeteorCamera.getPicture = function (options, callback) {
   
   
   view = Blaze.render(Template.camera, document.body);
+  app.popup.open($('.camera-popup'),true)
 };
