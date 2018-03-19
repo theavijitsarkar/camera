@@ -116,7 +116,7 @@ Template.camera.events({
     }
     
     if (stream) {
-      stream.stop();
+         stream.getTracks().forEach(function (track) { track.stop(); });
     }
   }
 });
@@ -132,7 +132,7 @@ Template.viewfinder.events({
     canvas.getContext('2d').drawImage(video, 0, 0, canvasWidth, canvasHeight);
     var data = canvas.toDataURL('image/jpeg', quality);
     photo.set(data);
-    stream.stop();
+    stream.getTracks().forEach(function (track) { track.stop(); });
   }
 }); 
 

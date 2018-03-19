@@ -37,17 +37,16 @@
 <template name="viewfinder">
   <div class="viewfinder">
     
+    <video id="video" class="{{#if waitingForPermission}}hidden{{/if}}"></video>
     <div>
       {{#if waitingForPermission}}
         <p>Waiting for camera permissions...</p>
       {{else}}
         <!-- Buttons above the image works better on small screens -->
-        <button class="button shutter">Take Photo</button>
+        <button class="{{buttonclass}} shutter">Take Photo</button>
       {{/if}}
-      <button class="button cancel">Cancel</button>
+      <button class="{{buttonclass}} cancel">Cancel</button>
     </div>
-    <video id="video" class="{{#if waitingForPermission}}hidden{{/if}}">
-      </video>
   </div>
 
   <canvas id="canvas" style="visibility: hidden"></canvas>
@@ -56,7 +55,7 @@
 <template name="genericError">
   <div class="generic-error">
     <p>{{message}}</p>
-    <button class="button cancel">Close Popup</button>
+    <button class="{{buttonclass}}  cancel">Close Popup</button>
   </div>
 </template>
 
@@ -83,6 +82,6 @@
           allow video capture.</dd>
     </dl>
 
-    <button class="button cancel">Close Popup</button>
+    <button class="{{buttonclass}}  cancel">Close Popup</button>
   </div>
 </template>
