@@ -185,9 +185,8 @@ MeteorCamera.getPicture = function (options, callback) {
   
   view = Blaze.render(Template.camera, document.body);
 
-  isF7 = options.isF7 || false
-  if(isF7){
-    app.popup.open($('.camera-popup'),true)  
-  }
+  
+  app.popup.open($('.camera-popup'),true)  
+  
   
 };
